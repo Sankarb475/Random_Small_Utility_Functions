@@ -1,6 +1,6 @@
 import scala.math.pow
 
-implicit class PowerFunction**(i: Int) {
+implicit class PowerFunction(i: Int) {
     def ** (b: Int): Int = pow(i, b).intValue
 }
 
