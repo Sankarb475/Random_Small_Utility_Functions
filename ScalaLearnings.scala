@@ -2,7 +2,7 @@
 
 var myArray = Array.ofDim[String](10, 10)
 
-//Generating all the permutation subsets of a list
+//Generating all the combination subsets of a list
 
 val xs = List( 'a', 'b' , 'c' , 'd' , 'e','a')
 val output = (1 to xs.length flatMap (x => xs.combinations(x))) map ( x => x.mkString(""))
