@@ -1,6 +1,8 @@
 //Defining two dimensional array(10 * 10) with 'null' as default value
 
 var myArray = Array.ofDim[String](10, 10)
+val a = ArrayBuffer.fill(10,10)(null)
+val a : ArrayBuffer[ArrayBuffer[String]] = ArrayBuffer.fill(10,10)("null")
 
 //Generating all the combination subsets of a list
 
