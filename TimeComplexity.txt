@@ -1,0 +1,7 @@
+Its really hard to answer "how long does it take to run your code", because it depends on so many factors :
+Your computer hardware, other programs running at the time when you are running your code, the programming language 
+you're using etc.
+
+So the valid question in this scenario would be : "how does the runtime of the code grow as the input size grows?"
+--so, to answer this question we can use two tool : "Big O notation and Time complexity".
+
