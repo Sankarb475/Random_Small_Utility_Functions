@@ -5,3 +5,11 @@ you're using etc.
 So the valid question in this scenario would be : "how does the runtime of the code grow as the input size grows?"
 --so, to answer this question we can use two tool : "Big O notation and Time complexity".
 
+Time Complexity : a way of showing how the runtime of a function increases as the size of the input increases.
+
+Different types of time complexity :
+Linear time, constant time, quadratic time etc.
+
+To represent these types in a mathematical way we have Big O Notation.
+Linear Time => O(n)
+
