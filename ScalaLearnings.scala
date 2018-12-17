@@ -37,3 +37,18 @@ l1.sorted == l2.sorted  //output = true
 //If what you want is "these lists contain the same elements and are the same size, but the number of repetitions of a 
 //given element can differ between the two lists":
 l1.size == l2.size && l1.toSet == l2.toSet
+
+
+//Definign multiple parameters at a time
+//==========================================================================
+
+scala> val (l,r) = (1,2)
+l: Int = 1
+r: Int = 2
+
+
+scala> val (l,r,m) = (1,2,Array.range(1,5))
+l: Int = 1
+r: Int = 2
+m: Array[Int] = Array(1, 2, 3, 4)
+
