@@ -104,6 +104,46 @@ a: String = This is an example of Multilines, but we would rather want to see th
 
 
 
+
+//Scala Options
+//==========================================================================
+scala> val m = 98
+m: Int = 98
+
+scala> val p : Option[Int] = if (m > 100) Some(m) else None
+p: Option[Int] = None
+
+scala> val result = p.getOrElse("None")  //p.get will throw an error because "p" is None
+result: Any = None
+
+
+scala> val p : Option[Int] = if (m > 10) Some(m) else None
+p: Option[Int] = Some(98)
+
+scala> val result = p.get
+result: Int = 98
+
+scala> p.isEmpty
+res114: Boolean = false
+
+scala> p.exists(_ > 90)
+res116: Boolean = true
+
+scala> p.foreach(println)
+98
+
+scala> p.filter(_ > 30)
+res121: Option[Int] = Some(98)
+
+scala> p.filter(_ > 30).getOrElse("None")
+res122: Any = 98
+
+scala> p.filter(_ > 100).getOrElse("Empty")
+res123: Any = Empty
+
+
+
+
 /*Scala concept "Either" which kind of works like Options, it helps us define different return type A common use of Either 
 is as an alternative to Option for dealing with possible missing values. In this usage, scala.None is replaced with a 
 Left which can contain useful information. Right takes the place of Some. Convention dictates that Left is used for failure 
