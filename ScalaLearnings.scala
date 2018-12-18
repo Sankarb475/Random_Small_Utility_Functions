@@ -5,6 +5,8 @@ var myArray = Array.ofDim[String](10, 10)
 val a = ArrayBuffer.fill(10,10)(null)
 val a : ArrayBuffer[ArrayBuffer[String]] = ArrayBuffer.fill(10,10)("null")
 
+
+
 //Generating all the combination subsets of a list
 //==========================================================================
 
@@ -22,6 +24,7 @@ def combine(in: List[Char]): Seq[String] =
     } yield combinations.mkString 
 
 combine(xs) // Gives the same output
+
 
 //Sorting two collection
 //==========================================================================
@@ -52,3 +55,40 @@ l: Int = 1
 r: Int = 2
 m: Array[Int] = Array(1, 2, 3, 4)
 
+
+
+//Scala Multilines
+//==========================================================================
+
+val a = """I am a Big Data Engineer
+        working for a MNC"""
+
+//output
+a: String =                         
+I am a Big Data Engineer
+        working for a MNC
+
+//if we wanna avoid the unneccesary spaces
+
+val a = """I am a Big Data Engineer
+        #working for a MNC""".stripMargin('#')
+//output
+a: String =
+I am a Big Data Engineer
+working for a MNC
+
+//stripMargin by default takes '|' as delimiter
+
+//If we wanna write multilines but want to have it in a single line
+
+val a = """This is an example of Multilines,
+        |but we would rather want to see the
+        |output in a single line""".stripMargin.replaceAll("\n", " ")
+
+//output
+a: String = This is an example of Multilines, but we would rather want to see the output in a single line
+
+
+
+//Scala concept "Either" which kind of works like Options, it helps us define different return type
+//====================================================================================================
