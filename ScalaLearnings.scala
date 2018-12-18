@@ -116,6 +116,9 @@ p: Option[Int] = None
 scala> val result = p.getOrElse("None")  //p.get will throw an error because "p" is None
 result: Any = None
 
+scala> p.isDefined
+res124: Boolean = false
+
 
 scala> val p : Option[Int] = if (m > 10) Some(m) else None
 p: Option[Int] = Some(98)
@@ -140,6 +143,9 @@ res122: Any = 98
 
 scala> p.filter(_ > 100).getOrElse("Empty")
 res123: Any = Empty
+
+scala> p.isDefined
+res125: Boolean = true
 
 
 
