@@ -110,3 +110,44 @@ Left which can contain useful information. Right takes the place of Some. Conven
 and Right is used for success
 ====================================================================================================
 */
+def either (a:Int,b:Int) : Either[Double,String] = {
+  if (b == 0) Right("divide by 0 exception")
+  else Left(a/b)
+}
+
+scala> val a = either(3,0)
+a: Either[Double,String] = Right(divide by 0 exception)
+
+scala> val b = either(31,3)
+b: Either[Double,String] = Left(10.0)
+
+//taking the value out from the Right/Left Wrapper
+
+scala> val c = b match {
+     |   case Right(x) => x.toString
+     |   case Left(x) => x.toDouble
+     | }
+c: Any = 10.0
+
+scala> val output = b.fold(l => l.toDouble, r => r.toString)
+output: Any = 10.0
+
+scala> val d = Right(5.0)
+d: scala.util.Right[Nothing,Double] = Right(5.0)
+
+scala> val d : Either[Any,String] = Right("Dummy")
+d: Either[Any,String] = Right(Dummy)
+
+scala> val e = d.fold(l => l.toString, r => r.toString)
+e: String = Dummy
+
+
+
+
+//Scala Sealed Classes
+//==========================================================================
+
+
+
+
+
