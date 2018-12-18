@@ -1,9 +1,20 @@
+//Taking input dynamically
+//==========================================================================
+val a = Console.readLine   //it has been depreciated
+
+import scala.io._
+
+val a = StdIn.readLine("Give Input \n")    //the input is always in String
+val aInt = a.toInt
+
+
 //Defining two dimensional array(10 * 10) with 'null' as default value
 //==========================================================================
 
 var myArray = Array.ofDim[String](10, 10)
 val a = ArrayBuffer.fill(10,10)(null)
 val a : ArrayBuffer[ArrayBuffer[String]] = ArrayBuffer.fill(10,10)("null")
+
 
 
 
@@ -26,6 +37,7 @@ def combine(in: List[Char]): Seq[String] =
 combine(xs) // Gives the same output
 
 
+
 //Sorting two collection
 //==========================================================================
 val l1 = List(1,2,3) 
@@ -40,6 +52,8 @@ l1.sorted == l2.sorted  //output = true
 //If what you want is "these lists contain the same elements and are the same size, but the number of repetitions of a 
 //given element can differ between the two lists":
 l1.size == l2.size && l1.toSet == l2.toSet
+
+
 
 
 //Definign multiple parameters at a time
@@ -90,5 +104,9 @@ a: String = This is an example of Multilines, but we would rather want to see th
 
 
 
-//Scala concept "Either" which kind of works like Options, it helps us define different return type
-//====================================================================================================
+/*Scala concept "Either" which kind of works like Options, it helps us define different return type A common use of Either 
+is as an alternative to Option for dealing with possible missing values. In this usage, scala.None is replaced with a 
+Left which can contain useful information. Right takes the place of Some. Convention dictates that Left is used for failure 
+and Right is used for success
+====================================================================================================
+*/
