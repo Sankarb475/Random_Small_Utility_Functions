@@ -141,7 +141,13 @@ d: Either[Any,String] = Right(Dummy)
 scala> val e = d.fold(l => l.toString, r => r.toString)
 e: String = Dummy
 
+//using "merge" we can get the output, but the return type always ends up being "Any"
 
+scala> val empty : Either[String,Int] = Right(1000)
+empty: Either[String,Int] = Right(1000)
+
+scala> val emptyVal = empty.merge
+emptyVal: Any = 1000
 
 
 //Scala Sealed Classes
