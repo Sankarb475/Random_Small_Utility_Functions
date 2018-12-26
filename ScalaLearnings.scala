@@ -196,9 +196,36 @@ scala> val emptyVal = empty.merge
 emptyVal: Any = 1000
 
 
-//Scala Sealed Classes
+//Scala Sealed Classes and final methods/classes/parameters
 //==========================================================================
+A final class cannot be extended.
 
+//Final Class
+
+scala> final class Dummy
+defined class Dummy
+
+scala> class DummyName extends Dummy
+<console>:8: error: illegal inheritance from final class Dummy
+       class DummyName extends Dummy
+
+
+//Final Method
+scala> class Dummy {
+     | final def example(a: Int, b : Int) = {
+     | a+b
+     | }
+     | }
+defined class Dummy
+
+scala> class Dummy2 extends Dummy{
+     | def example (c : Int, d : Int) = {
+     | c+d
+     | }
+     | }
+<console>:12: error: overriding method example in class Dummy of type (a: Int, b: Int)Int;
+ method example cannot override final member
+       def example (c : Int, d : Int) = {
 
 
 
