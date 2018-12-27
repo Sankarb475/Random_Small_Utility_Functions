@@ -226,7 +226,20 @@ scala> class Dummy2 extends Dummy{
 <console>:12: error: overriding method example in class Dummy of type (a: Int, b: Int)Int;
  method example cannot override final member
        def example (c : Int, d : Int) = {
+           
 
+//Final Parameters
 
+scala> trait dummy {
+     | final val a : String = "Puja"
+     | }
+defined trait dummy
+
+scala> class Dummy2 extends dummy{
+     | val a = "Sankar"
+     | }
+<console>:9: error: overriding value a in class dummy$class of type String;
+ value a cannot override final member
+       val a = "Sankar"          
 
 
