@@ -1,0 +1,15 @@
+//So far the pointers I have learnt while coding in real life project
+
+1) Always give meaningful name to your methods/variables/classes
+
+2) Try to create/use as less number of variables as possible
+
+3) Give commands on what exactly a method or code snippet does 
+
+4) Focus on the readability of your code, dont just write code and follow the logic, make sure it is readble to the laymen
+
+5) Try to reduce the number of lines of your code
+
+6) Create methods whenever a code snippet gets repeated more than twice, even the method is an one liner
+
+.........
