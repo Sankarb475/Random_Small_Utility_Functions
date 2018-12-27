@@ -240,6 +240,24 @@ scala> class Dummy2 extends dummy{
      | }
 <console>:9: error: overriding value a in class dummy$class of type String;
  value a cannot override final member
-       val a = "Sankar"          
+       val a = "Sankar"     
+           
+/*
+Sealed Class : A sealed class may not be directly inherited, except if the inheriting template is defined in 
+the same source file as the inherited class. However, subclasses of a sealed class can inherited anywhere. 
+A sealed trait can only be extended in the same source file as it's declared.
+Option is a sealed class.
+*/
+     
+scala> sealed trait Option[+A]
+defined trait Option
+
+//Because Option[A] is sealed, it cannot be extended by other developers - doing so would alter its meaning
+//As an added bonus, if a trait is sealed, the compiler can warn you if your pattern matches are not exhaustive 
+//enough because it knows that Option is limited to Some and None.
+           
+           
+           
+           
 
 
