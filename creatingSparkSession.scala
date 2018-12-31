@@ -14,3 +14,4 @@ val sqlContext: SQLContext = spark.sqlContext
 val spark = SparkSession.builder().master("local").getOrCreate()
 
 val spark = SparkSession.builder().getOrCreate()
+import spark.implicits._
