@@ -8,7 +8,7 @@ val master = "localDummy"
 val conf: SparkConf = new SparkConf().setMaster(master).setAppName(appName).set("spark.driver.allowMultipleContexts", "false").set("spark.ui.enabled", "false")
 val spark: SparkSession = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate()
 val sc: SparkContext = spark.sparkContext
-val sqlContext: SQLContext = ss.sqlContext
+val sqlContext: SQLContext = spark.sqlContext
 
 //without using conf
 val spark = SparkSession.builder().master("local").getOrCreate()
