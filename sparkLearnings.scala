@@ -17,4 +17,13 @@ scala> dataset.withColumn("upper", upperUDF($"text")).show
 |  1|world|WORLD|
 +---+-----+-----+
 
+scala> dataset.withColumn("upper", upperUDF('text)).show
++---+-----+-----+
+| id| text|upper|
++---+-----+-----+
+|  0|hello|HELLO|
+|  1|world|WORLD|
++---+-----+-----+
+
+// the replacement of $"colName" has been found and it is 'colName 
 
