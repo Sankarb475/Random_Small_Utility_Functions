@@ -27,3 +27,6 @@ scala> dataset.withColumn("upper", upperUDF('text)).show
 
 // the replacement of $"colName" has been found and it is 'colName 
 
+//You can register UDFs to use in SQL-based query expressions via UDFRegistration 
+//(that is available through SparkSession.udf attribute)
+
