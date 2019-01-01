@@ -58,7 +58,27 @@ scala> data.show
 |  2| 25|
 +---+---+
 
-//If you want to import a Hive table into spark and use spark Sql
+//If you want to import a Hive table data with schema into spark dataframe and use spark Sql on top of it
+
+scala> import org.apache.spark.sql.{SQLContext, SparkSession}
+import org.apache.spark.sql.{SQLContext, SparkSession}
+
+scala> import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.{SparkConf, SparkContext}
+
+scala> val conf : SparkConf = new SparkConf()
+conf: org.apache.spark.SparkConf = org.apache.spark.SparkConf@996ed93
+
+scala> val spark: SparkSession = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate()
+spark: org.apache.spark.sql.SparkSession = org.apache.spark.sql.SparkSession@5c0104df
+
+scala> val dataHive = spark.table("databaseName.tableName")
+
+scala> dataHive.createOrReplaceTempView("HiveTable")
+
+scala> val data = sqlContext.sql("select * from HiveTable")
+
+scala> val data = spark.sql("select * from HiveTable")
 
 
 
