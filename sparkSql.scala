@@ -80,6 +80,12 @@ scala> val data = sqlContext.sql("select * from HiveTable")
 
 scala> val data = spark.sql("select * from HiveTable")
 
-
-
+/*
+registerTempTable and saveAsTable
+saveAsTable() creates a permanent, physical table stored in S3 using the Parquet format. This table is accessible to all 
+clusters including the dashboard cluster. The table metadata including the location of the file(s) is stored within the 
+Hive metastore. Re-creating a permanent table of the same name (using overwrite=true) but with new data causes the old data 
+to be deleted and the new data to be saved in the same underlying file on S3. This may lead to moments when the data is not 
+available due to S3's eventual consistency model. 
+*/
 
