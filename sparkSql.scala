@@ -4,8 +4,6 @@ df: org.apache.spark.sql.DataFrame = [ID: int]
 scala> val dataFrame = df.withColumn("Age",lit(25))
 dataFrame: org.apache.spark.sql.DataFrame = [ID: int, Age: int]
 
-scala> 
-
 scala> dataFrame.show
 +---+---+
 | ID|Age|
