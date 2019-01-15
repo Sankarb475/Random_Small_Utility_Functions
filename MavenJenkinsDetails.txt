@@ -1,0 +1,51 @@
+Maven is a build automation tool used primarily for Java projects.
+Maven comes with pre-defined targets for performing certain well-defined tasks such as compilation of code and its packaging as jar.
+
+Maven features:
+  Making the build process easy
+  Providing a uniform build system
+  Providing quality project information
+  Providing guidelines for best practices development
+  Allowing transparent migration to new features
+  
+Maven dynamically downloads Java libraries and Maven plug-ins from one or more repositories such as the Maven 2 Central Repository, 
+and stores them in a local cache.
+
+Maven has the following three standard lifecycles −
+
+1) clean 
+
+cleans the previous build informations
+(it deletes the "target" folder from the project where the compiled classes and the jar resides)
+
+2) default(or build)
+
+default(or build) lifecycle is a list of named phases that can be used to give order to goal execution. One of Maven's standard lifecycles 
+is the default lifecycle, which includes the following phases, in this order:
+
+ validate ==> 
+ Validates whether project is correct and all necessary information is available to complete the build process.
+ 
+ compile ==>
+ Compile the source code of the project, the code you have written, that gets compiled.
+
+ test ==>
+ Run tests using a suitable unit testing framework (Junit is one).
+
+ package ==>
+ Take the compiled code and package it in its distributable format, such as a JAR, WAR, or EAR file.
+ 
+ verify ==>
+ Run any check-ups to verify the package is valid and meets quality criteria.
+ 
+ install ==>
+ Install the package into the local repository, which can be used as a dependency in other projects locally.
+ 
+ deploy ==>
+ Copies the final package to the remote repository for sharing with other developers and projects.
+ 
+ 
+3) site
+
+ Maven Site plugin is generally used to create fresh documentation to create reports, deploy site, etc.
+
