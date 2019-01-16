@@ -59,3 +59,16 @@ scala> c.collect.foreach(println)
 5
 3
 1
+
+scala> val b = a.map(b => (b,1))groupByKey()
+b: org.apache.spark.rdd.RDD[(String, Iterable[Int])] = ShuffledRDD[68] at groupByKey at <console>:51
+
+scala> b.collect.foreach(println)
+(7,CompactBuffer(1))
+(2,CompactBuffer(1))
+(8,CompactBuffer(1))
+(3,CompactBuffer(1))
+(4,CompactBuffer(1, 1))
+(5,CompactBuffer(1))
+(6,CompactBuffer(1, 1))
+(1,CompactBuffer(1, 1))
