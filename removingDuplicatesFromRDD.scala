@@ -1,4 +1,5 @@
 //here we will see how can we remove duplciates from a rdd
+//create a paired rdd and apply aggregation on values against the key
 
 /*
 The input file consists of: 
@@ -31,6 +32,7 @@ scala> a.collect.foreach(println)
 7
 8
 
+//creating a paired rdd and doing aggregation on values
 scala> val b = a.map(l => (l,1)).reduceByKey((a,b) => a+b)
 b: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[27] at reduceByKey at <console>:50
 
