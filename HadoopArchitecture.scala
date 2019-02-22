@@ -73,3 +73,15 @@ scalability ==> over 10,000 nodes in a cluster, it used to be upto 10,000 in had
 
 --Hadoop 2.0 has one standby namenode, but for business critical deployments require higher degrees of fault-tolerance. So, 
 in Hadoop 3 allows users to run multiple standby NameNodes.
+
+
+Hadoop 1.0 Architecture
+==============================================================================================================================
+MapReduce component is divided into two sub-components:
+Job Tracker is used to assign MapReduce Tasks to Task Trackers in the Cluster of Nodes. Sometimes, it reassigns same tasks to 
+other Task Trackers as previous Task Trackers are failed or shutdown scenarios. Job Tracker maintains all the Task Trackers 
+status like Up/running, Failed, Recovered etc.
+
+Task Tracker
+Task Tracker executes the Tasks which are assigned by Job Tracker and sends the status of those tasks to Job Tracker.
+
