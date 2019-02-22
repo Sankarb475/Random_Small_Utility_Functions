@@ -45,6 +45,31 @@ HDFS block placement will use rack awareness for fault tolerance by placing one 
 provides data availability in the event of a network switch failure or partition within the cluster.
 
 NFS ==> Network File System
+NFS allows the user or system administrator to mount (designate as accessible) all or a portion of a file system on a server. 
+The portion of the file system that is mounted can be accessed by clients with whatever privileges are assigned to each file 
+(read-only or read-write). NFS uses Remote Procedure Calls (RPC) to route requests between clients and servers.
+
+Hadoop Federation ==>
+federation uses multiple independent Namenodes/namespaces. The Namenodes are independent and do not require coordination 
+with each other. Each Datanode registers with all the Namenodes in the cluster. Datanodes send periodic heartbeats and 
+block reports. They also handle commands from the Namenodes. Failure of one namnode will not impact the other namenodes.
+
+A Namenode failure does not prevent the Datanode from serving other Namenodes in the cluster.
+
+Block Pool ==>
+A Block Pool is a set of blocks that belong to a single namespace.
+
 
                      
+Erasure Coding ==>
+Erasure coding (EC) is a method of data protection in which data is broken into fragments, expanded and encoded with 
+redundant data pieces and stored across a set of different locations or storage media. The goal of erasure coding is to 
+enable data that becomes corrupted at some point in the disk storage process to be reconstructed by using information 
+about the data that's stored elsewhere in the array. Erasure codes are often used instead of traditional RAID because of 
+their ability to reduce the time and overhead required to reconstruct data. The drawback of erasure coding is that it can 
+be more CPU-intensive, and that can translate into increased latency.
 
+scalability ==> over 10,000 nodes in a cluster, it used to be upto 10,000 in hadoop 2.0
+
+--Hadoop 2.0 has one standby namenode, but for business critical deployments require higher degrees of fault-tolerance. So, 
+in Hadoop 3 allows users to run multiple standby NameNodes.
