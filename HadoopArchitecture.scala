@@ -82,6 +82,17 @@ Job Tracker is used to assign MapReduce Tasks to Task Trackers in the Cluster of
 other Task Trackers as previous Task Trackers are failed or shutdown scenarios. Job Tracker maintains all the Task Trackers 
 status like Up/running, Failed, Recovered etc.
 
+Job tracker runs on Master Node.
+HDFS stores data by using 64MB size
+
 Task Tracker
 Task Tracker executes the Tasks which are assigned by Job Tracker and sends the status of those tasks to Job Tracker.
+
+How it works ::
+Clients (one or more) submit their work to Hadoop System. When Hadoop System receives a Client Request, first it is received 
+by a Master Node. Master Node’s MapReduce component “Job Tracker” is responsible for receiving Client Work and divides into 
+manageable independent Tasks and assign them to Task Trackers. Slave Node’s MapReduce component “Task Tracker” receives those 
+Tasks from “Job Tracker” and perform those tasks by using MapReduce components. Once all Task Trackers finished their job, Job
+Tracker takes those results and combines them into final result. Finally Hadoop System will send that final result to the 
+Client.
 
