@@ -96,3 +96,17 @@ Tasks from “Job Tracker” and perform those tasks by using MapReduce componen
 Tracker takes those results and combines them into final result. Finally Hadoop System will send that final result to the 
 Client.
 
+
+Hadoop 2.0 Architecture
+==============================================================================================================================
+In hadoop 2.0 resource manager Yarn runs on Master node, which has two components :
+Scheduler :: Responsible to schedule required resources to Applications 
+Application Manager :: manages the application’s scheduling and coordination
+
+And Task Tracker has been replaced by Node manager which takes care of all the task that Task tracker used to do, container
+is part of data node monitored by node manager.
+
+So whenver an application is run by clinet, one Application master gets created which takes over the application. 
+It interacts with both Resource Manager’s Scheduler and Node Manager. It interacts with Scheduler to acquire required resources.
+It interacts with Node Manager to execute assigned tasks and monitor those task’s status.
+
