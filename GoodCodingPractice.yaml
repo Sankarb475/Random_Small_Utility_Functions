@@ -12,4 +12,7 @@
 
 6) Create methods whenever a code snippet gets repeated more than twice, even the method is an one liner
 
+7) Always try to avoid hard coding, if you have credentials you have put in your code, better to create config file and
+   have the credentials written over there, and read the credentials from that config file.
+
 ...........
